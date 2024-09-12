@@ -5,7 +5,8 @@ FROM node:18.20-alpine3.20
 RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
-    git && \
+    git \
+    shadow && \
   useradd -ms /bin/bash linstor-gui && \
   mkdir -p /config && \
   chsh -s /bin/bash root
