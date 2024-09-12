@@ -12,9 +12,6 @@ RUN \
   mkdir -p /config && \
   chsh -s /bin/bash root
   
-# Set version variable to main so if nothing if specified just the latest entry for the github will be cloned
-ENV VERSION=main
-
 # Declaring a volume so we can attempt to preserve the configuration for the gui
 VOLUME /config
 

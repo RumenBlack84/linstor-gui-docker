@@ -4,16 +4,12 @@ services:
     environment:
       - user=1000:1000 #Match to the UID & GID of the user you want to run the docker as. It's important they have permission to access the files where we have our bind mount located. This will also avoid running the container process itself as root which is good for security.
       - UMASK=022 # set umask 022 will cause all files to have 755 perms
-      - VERSION=v1.8.0 # this corresponds to the version tag in the linstore-gui github. Set this to use a specific version otherwise the default value is main which will pull the latest from github.
       - CONTROLLER_IP= # mandatory, configure the IP address for your linstor-controller. Assuming this is a highly available controller use it's VIP
       - CONTROLLER_PORT=3370 # Default port for controller is 3370
       - GATEWAY_IP= # Optional, configure only if using linstor-gateway
       - GATEWAY_PORT=8080 # default port for gateway is 8080
       - VSAN_IP= # Optional, configure if using vsan
       - VSAN_PORT= # Just in case the vsan is on a different port then default normally its just https 443, leave blank unless required
-LINSTOR_API_HOST=${CONTROLLER_IP}:${CONTROLLER_PORT}
-GATEWAY_API_HOST=${GATEWAY_IP}:${GATEWAY_PORT}
-VSAN_API_HOST=${VSAN_IP}:${VSAN_PORT}
     ports:
       # Network Security Devices
       - "12843:8080"
