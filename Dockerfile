@@ -14,7 +14,10 @@ RUN \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# Declaring a volume so we can point to extracted adlumin code from the log forwarder VM
+# Set version variable to main so if nothing if specified just the latest entry for the github will be cloned
+ENV VERSION=main
+
+# Declaring a volume so we can attempt to preserve the configuration for the gui
 VOLUME /config
 
 USER linstor-gui
