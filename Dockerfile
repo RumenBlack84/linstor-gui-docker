@@ -6,6 +6,7 @@ RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
     git \
+    bash \
     shadow && \
   useradd -ms /bin/bash linstor-gui && \
   mkdir -p /config && \
