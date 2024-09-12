@@ -18,11 +18,11 @@ ENV VERSION=main
 # Declaring a volume so we can attempt to preserve the configuration for the gui
 VOLUME /config
 
-USER linstor-gui
-
 # Copy the startup script
 COPY entrypoint.sh /home/linstor-gui/entrypoint.sh
 RUN chmod +x /home/linstor-gui/entrypoint.sh
+
+USER linstor-gui
 
 # Set working directory to where we have the linstor-gui files
 WORKDIR /config
