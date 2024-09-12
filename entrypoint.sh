@@ -6,7 +6,7 @@ TARGET_DIR="/config"
 # Check if the directory exists and is a git repository
 if [ ! -d "${TARGET_DIR}/.git" ]; then
   echo "Repository not found in ${TARGET_DIR}. Cloning..."
-  git clone --branch ${VERSION} --single-branch https://github.com/username/repository.git "${TARGET_DIR}"
+  git clone https://github.com/username/repository.git "${TARGET_DIR}"
 else
   echo "Repository already exists in ${TARGET_DIR}. Skipping clone."
 fi
