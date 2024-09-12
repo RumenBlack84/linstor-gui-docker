@@ -23,3 +23,6 @@ LINSTOR_API_HOST=${CONTROLLER_IP}:${CONTROLLER_PORT}
 GATEWAY_API_HOST=${GATEWAY_IP}:${GATEWAY_PORT}
 VSAN_API_HOST=${VSAN_IP}:${VSAN_PORT}
 EOF
+
+# Pass control to the CMD instruction (npm start)
+exec "$@"
