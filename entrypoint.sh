@@ -13,7 +13,7 @@ fi
 
 npm --prefix ${TARGET_DIR} install
 
-NODE_IP=$(hostname -I | awk '{print $1}')
+NODE_IP=$(hostname -i | awk '{print $1}')
 
 echo "**** Configuring /config/.env ****"
 cat <<EOF > /config/.env
